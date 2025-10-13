@@ -31,7 +31,6 @@ numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 **Problem:**  
 Given a string, extract all vowels (a, e, i, o, u) and store them in a list.  
 
-
 **Input:**
 ```python
 text = "Python comprehensions are powerful!"
@@ -94,18 +93,14 @@ text = "Python is powerful, and python is easy to learn!"
 
 ### 6 Flatten a list
 
-**Problem:**
-Flatten a two dimensional list.
+**Problem**
+Flatten a two dimensional list
 
-**Input:**
-```python
+**Input**
 matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
-```
 
-**Expected Output:**
-```python
+**Expected Output**
 [1, 2, 3, 4, 5, 6, 7, 8, 9]
-```
 
 ---
 
