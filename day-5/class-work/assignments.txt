@@ -1,0 +1,75 @@
+
+Session #1  [45]
+
+Write a python function to merge two dictionaries
+   Example: d1 = { 'a': 20, 'b': 30 }
+            d2 = { 'b': 40, 'c': 50 }
+            Output -> { 'a' : 20, 'b':70, 'c' : 50 }
+    Merge rules: Numbers -> add
+                 Strings -> concatenate
+                 List, set -> Merge
+                 Tuple -> List of tuples
+                 Dictionary -> Merge
+
+Write a function to find the second largest number in the list
+   Example: Input <- [34, 56, 67, 43]
+            Outupt -> 56
+
+Write a function that takes any number of lists and returns a list of elements that are common to all.
+
+    # Example usage:
+    list1 = [1, 2, 3, 4, 5]
+    list2 = [2, 3, 5, 7, 9]
+    list3 = [1, 2, 5, 8, 10]
+
+    print(find_common(list1, list2, list3))
+
+Write a recursive function to calculate the factorial of N
+
+-----------------------------------------------------------------------------------------------------------
+
+User Defined Modules Exercise - [90] 
+
+1. Create a module called strops -> getspan(s, ss), reverseWords(s), removePunctuation(s), countWords(s), charecterMap(s)
+                                    makeTitle(s), normalizeSpaces(s), transform(s), getPermutations(s)
+3. Create a setup file 
+4. Test in a virtual environment
+    4.1 Install the module in virtual environment
+    4.2 Create a program to input a string and substring. Diplay the span of the substrings
+
+------------------------------------------------------------------------------------------------------------
+Word Jumble Game - Using Files [90]
+
+Demo. Design a Word Jumble Game and implement in python
+   The game should consist of atleast 10 words to begin with
+    Jumbled Word: "otpcomure"
+    Your Guess: "computer"
+    ✅ Correct! 
+
+    Note: Use Unicode charecter to print the tick marks
+    Example: print("\U00002705 Correct!")
+    Sample words should come from a file
+
+1. Based on the above code   
+
+   Give players two attempts
+   If the player guesses in the first attempt give 2 points, in the second attempt 1 points, otherwise 0
+   Allow players to get hints/clues if they fail to guess in the first attempt
+   Give the result based on total points, total first attempts, total second attempts
+   Use appropriate unicode charecters
+
+   Example: 'alepp'
+             Can you guess? ape 
+             CLUE: 'This is a fruit'
+             Take a second guess? apple
+             ✅ Correct! 
+
+             ...
+
+             Total          = 18
+             First          = 5
+             Second         = 8
+             Overall        = B+
+
+   Challenge: Keep the hints in the file. How to read the the words and hints from a file and integrate it
+            Come up with a logic to display the result

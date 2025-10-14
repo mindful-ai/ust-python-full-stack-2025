@@ -1,0 +1,1 @@
+ppackage @ file:///C:/mindful-ai/ust-global-python-fs/day-5/primesapp

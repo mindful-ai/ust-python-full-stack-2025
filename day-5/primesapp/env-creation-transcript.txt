@@ -1,0 +1,78 @@
+C:\mindful-ai\ust-global-python-fs>python -m venv ust-python-env
+
+C:\mindful-ai\ust-global-python-fs>C:\mindful-ai\ust-global-python-fs\ust-python-env\Scripts\activate.bat
+
+(ust-python-env) C:\mindful-ai\ust-global-python-fs>cd C:\mindful-ai\ust-global-python-fs\day-5\primesapp
+
+(ust-python-env) C:\mindful-ai\ust-global-python-fs\day-5\primesapp>pip install .
+Processing c:\mindful-ai\ust-global-python-fs\day-5\primesapp
+  Installing build dependencies ... done
+  Getting requirements to build wheel ... done
+  Preparing metadata (pyproject.toml) ... done
+Building wheels for collected packages: ppackage
+  Building wheel for ppackage (pyproject.toml) ... done
+  Created wheel for ppackage: filename=ppackage-0.1-py3-none-any.whl size=1845 sha256=18b04a632a12a212b495bda03296364021f9eb1c58caadf4c71a5ed43eade18f
+  Stored in directory: C:\Users\mindf\AppData\Local\Temp\pip-ephem-wheel-cache-w3_t5smd\wheels\1a\e6\0b\2ffe35a56a2655e3998e0035093496cf40e3566e3fcd50a20d
+Successfully built ppackage
+Installing collected packages: ppackage
+Successfully installed ppackage-0.1
+
+[notice] A new release of pip is available: 25.0.1 -> 25.2
+[notice] To update, run: python.exe -m pip install --upgrade pip
+(ust-python-env) C:\mindful-ai\ust-global-python-fs\day-5\primesapp>python
+Type "help", "copyright", "credits" or "license" for more information.
+Ctrl click to launch VS Code Native REPL
+>>> import ppackage
+primes.py __name__ =  ppackage.primes
+>>> ppackage.checkprime(7)
+True
+>>> ppackage.getHighestPrime(1, 100)
+97
+>>> ppackage.getAllPrimes(1, 100)
+(26, [1, 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97])
+>>> exit()
+
+(ust-python-env) C:\mindful-ai\ust-global-python-fs\day-5\primesapp>deactivate
+
+---------------------------------------------------------------------------------------------------------
+
+Uninstalling a package:
+
+(ust-python-env) C:\mindful-ai\ust-global-python-fs\day-5\primesapp>pip uninstall ppackage
+Found existing installation: ppackage 0.1
+Uninstalling ppackage-0.1:
+  Would remove:
+    c:\mindful-ai\ust-global-python-fs\ust-python-env\lib\site-packages\ppackage-0.1.dist-info\*
+    c:\mindful-ai\ust-global-python-fs\ust-python-env\lib\site-packages\ppackage\*
+Proceed (Y/n)? Y
+  Successfully uninstalled ppackage-0.1
+
+---------------------------------------------------------------------------------------------------------
+
+Invoking DOC strings:
+
+(ust-python-env) C:\mindful-ai\ust-global-python-fs\day-5\primesapp>python
+Python 3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+Ctrl click to launch VS Code Native REPL
+>>> import ppackage
+primes.py __name__ =  ppackage.primes
+>>> help(ppackage.checkprime)
+Help on function checkprime in module ppackage.primes:
+
+checkprime(n)
+    Checks wether a number is prime or not
+
+>>> print(ppackage.getHighestPrime.__doc__)
+Gives you the highest prime number in a given range m, n
+>>>
+
+---------------------------------------------------------------------------------------------------------
+
+Capturing a snapshot of your environment:
+
+(Note: You should be inside the environment)
+
+(ust-python-env) C:\mindful-ai\ust-global-python-fs\day-5\primesapp>pip freeze > requirements.txt
+
+(ust-python-env) C:\mindful-ai\ust-global-python-fs\day-5\primesapp>pip install -r requirements.txt

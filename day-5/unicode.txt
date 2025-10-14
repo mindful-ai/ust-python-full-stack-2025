@@ -1,0 +1,173 @@
+✅ Check Marks & Crosses
+✔️ ✔️ (Heavy Check Mark) \u2714
+
+✅ ✅ (Check Mark Button) \U00002705
+
+❌ ❌ (Cross Mark) \u274c
+
+❎ ❎ (Negative Squared Cross Mark) \U0000274E
+
+⭕ ⭕ (Large Circle) \U00002B55
+
+🔴 🔴 (Red Circle) \U0001F534
+
+🟢 🟢 (Green Circle) \U0001F7E2
+
+🔵 🔵 (Blue Circle) \U0001F535
+
+❤️ Hearts & Emotions
+❤️ ❤️ (Red Heart) \U00002764
+
+💔 💔 (Broken Heart) \U0001F494
+
+💕 💕 (Two Hearts) \U0001F495
+
+😍 😍 (Heart Eyes) \U0001F60D
+
+😎 😎 (Cool Face) \U0001F60E
+
+😊 😊 (Smiling Face) \U0001F60A
+
+🤔 🤔 (Thinking Face) \U0001F914
+
+😡 😡 (Angry Face) \U0001F621
+
+🤖 🤖 (Robot) \U0001F916
+
+🔥 Fire & Energy
+🔥 🔥 (Fire) \U0001F525
+
+⚡ ⚡ (Lightning Bolt) \U000026A1
+
+💥 💥 (Explosion) \U0001F4A5
+
+🎇 🎇 (Sparkler) \U0001F387
+
+✨ ✨ (Sparkles) \U00002728
+
+🚀 Progress, Speed, & Navigation
+🚀 🚀 (Rocket) \U0001F680
+
+⏳ ⏳ (Hourglass) \U000023F3
+
+⌛ ⌛ (Hourglass Done) \U0000231B
+
+🏃 🏃 (Running Person) \U0001F3C3
+
+🏗️ 🏗️ (Building Construction) \U0001F3D7
+
+🎢 🎢 (Roller Coaster) \U0001F3A2
+
+🏎️ 🏎️ (Racing Car) \U0001F3CE
+
+📌 Pins, Flags, & Markers
+📍 📍 (Round Pushpin) \U0001F4CD
+
+📌 📌 (Pushpin) \U0001F4CC
+
+🏴 🏴 (Black Flag) \U0001F3F4
+
+🚩 🚩 (Triangular Flag) \U0001F6A9
+
+📢 📢 (Loudspeaker) \U0001F4E2
+
+🎯 Goals, Completion, & Awards
+🎯 🎯 (Bullseye) \U0001F3AF
+
+🏆 🏆 (Trophy) \U0001F3C6
+
+🥇 🥇 (Gold Medal) \U0001F947
+
+🎖️ 🎖️ (Military Medal) \U0001F396
+
+💯 💯 (Hundred Points) \U0001F4AF
+
+💡 Ideas, Alerts, & Warnings
+💡 💡 (Light Bulb) \U0001F4A1
+
+⚠️ ⚠️ (Warning) \U000026A0
+
+❗ ❗ (Exclamation Mark) \U00002757
+
+❓ ❓ (Question Mark) \U00002753
+
+🛑 🛑 (Stop Sign) \U0001F6D1
+
+📄 Documents & Writing
+📝 📝 (Memo) \U0001F4DD
+
+📄 📄 (Document) \U0001F4C4
+
+📊 📊 (Bar Chart) \U0001F4CA
+
+📈 📈 (Upward Graph) \U0001F4C8
+
+📉 📉 (Downward Graph) \U0001F4C9
+
+🔢 Numbers & Symbols
+➊ ➊ (Circled One) \u2780
+
+➋ ➋ (Circled Two) \u2781
+
+➌ ➌ (Circled Three) \u2782
+
+🔟 🔟 (Keycap Ten) \U0001F51F
+
+🔢 🔢 (Input Numbers) \U0001F522
+
+🎵 Music & Sound
+🎵 🎵 (Musical Note) \U0001F3B5
+
+🔊 🔊 (Speaker on) \U0001F50A
+
+🔇 🔇 (Muted Speaker) \U0001F507
+
+🎤 🎤 (Microphone) \U0001F3A4
+
+🎧 🎧 (Headphones) \U0001F3A7
+
+🌎 Environment & Weather
+🌍 🌍 (Earth) \U0001F30D
+
+🌱 🌱 (Seedling) \U0001F331
+
+☀️ ☀️ (Sun) \u2600
+
+🌙 🌙 (Moon) \U0001F319
+
+⛈️ ⛈️ (Thunderstorm) \U000026C8
+
+🖥️ Tech & Computers
+🖥️ 🖥️ (Computer) \U0001F5A5
+
+⌨️ ⌨️ (Keyboard) \U00002328
+
+💻 💻 (Laptop) \U0001F4BB
+
+📡 📡 (Satellite Antenna) \U0001F4E1
+
+⏩ Fast Forward & Navigation
+⏩ ⏩ (Fast Forward) \U000023E9
+
+⏪ ⏪ (Rewind) \U000023EA
+
+⏫ ⏫ (Fast Up) \U000023EB
+
+⏬ ⏬ (Fast Down) \U000023EC
+
+🏁 Completion & Success
+🏁 🏁 (Finish Flag) \U0001F3C1
+
+🎉 🎉 (Party Popper) \U0001F389
+
+🍾 🍾 (Champagne Bottle) \U0001F37E
+
+📚 Books & Learning
+📖 📖 (Open Book) \U0001F4D6
+
+📚 📚 (Books) \U0001F4DA
+
+🎓 🎓 (Graduation Cap) \U0001F393
+
+🔖 🔖 (Bookmark) \U0001F516
+

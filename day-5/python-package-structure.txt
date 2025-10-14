@@ -1,0 +1,39 @@
+my_package/                 # Root directory (package name)
+│
+├── my_package/             # Main package directory
+│   ├── __init__.py         # Marks this as a package, can include package-level imports
+│   ├── module1.py          # A module with functions/classes
+│   ├── module2.py          # Another module
+│   ├── subpackage/         # A subpackage (optional)
+│   │   ├── __init__.py
+│   │   ├── submodule1.py
+│   │   ├── submodule2.py
+│   │   └── utils.py
+│   └── utils.py            # Utility functions (optional)
+│
+├── tests/                  # Unit tests directory
+│   ├── __init__.py
+│   ├── test_module1.py
+│   ├── test_module2.py
+│   └── test_subpackage.py
+│
+├── docs/                   # Documentation (optional)
+│   ├── index.md
+│   ├── installation.md
+│   └── usage.md
+│
+├── examples/               # Example scripts (optional)
+│   ├── example1.py
+│   ├── example2.py
+│   └── notebook.ipynb
+│
+├── setup.py                # Installation script (for `pip install`)
+├── pyproject.toml          # Modern package metadata (PEP 518)
+├── requirements.txt        # List of dependencies
+├── README.md               # Project overview
+├── LICENSE                 # License file
+├── .gitignore              # Git ignore file
+└── MANIFEST.in             # Specifies additional files to include in the package
+
+
+poetry
