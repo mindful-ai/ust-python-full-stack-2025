@@ -14,3 +14,55 @@ extract information case study
 
 Expectation -> jobapplicants.txt: should have the name, phone, email and jobid in comma
 separate format
+
+Session #2 [15] + [15] + [15]
+-------------------------------------------------------------------------------------
+
+1️⃣ Basic Class Creation: Car
+------------------------------------------------------------------
+Task: Create a class Car with attributes and methods as follows:
+
+Attributes: brand, model, year, mileage
+
+Methods:
+
+drive(distance): Increases mileage by distance.
+
+display_info(): Prints all details of the car.
+
+✅ Enhance: Add a fuel_level attribute and a method refuel(amount) to increase it.
+Adjust rest of the attributes accordinly
+
+
+2️⃣ Class with Encapsulation: BankAccount
+------------------------------------------------------------------
+Task: Implement a BankAccount class with:
+
+Attributes: balance, account_number
+
+Methods:
+
+deposit(amount): Adds money to balance.
+
+withdraw(amount): Deducts money if enough balance is available.
+
+get_balance(): Returns balance.
+
+✅ Enhance: Prevent withdrawal if balance falls below a minimum threshold.
+
+
+3️⃣ Class with Methods and Properties: Rectangle
+------------------------------------------------------------------
+Task: Design a Rectangle class:
+
+Attributes: length, width
+
+Methods:
+
+area(): Returns area.
+
+perimeter(): Returns perimeter.
+
+is_square(): Returns True if it’s a square, otherwise False.
+
+✅ Enhance: Use logic to prevent setting negative values for length and width.
