@@ -66,3 +66,10 @@ perimeter(): Returns perimeter.
 is_square(): Returns True if it’s a square, otherwise False.
 
 ✅ Enhance: Use logic to prevent setting negative values for length and width.
+
+
+Session #3 [20]
+------------------------------------------------------------------------------------
+
+Develop the "Guess my Number" game in the OOP fashion
+
