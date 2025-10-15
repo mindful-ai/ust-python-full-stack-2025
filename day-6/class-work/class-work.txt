@@ -1,0 +1,16 @@
+Session #1 [15] + [20]
+-----------------------------------------------------------------------------------
+
+student report case study
+
+1. Fix the problem with ranks -> all ranks should be covered
+   If many people have the same average, all of them should get the same rank
+2. Write a function to print the report into a report file
+
+extract information case study
+
+1. Complete all the regular expressions 
+2. Fix any issues
+
+Expectation -> jobapplicants.txt: should have the name, phone, email and jobid in comma
+separate format
