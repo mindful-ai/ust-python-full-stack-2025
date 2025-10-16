@@ -1,0 +1,132 @@
+Session 1 [60] NOTE: Extend the previously created classes
+---------------------------------------------------------------------------------------------------
+
+1️⃣ Exercise: Implement a Car Class and an ElectricCar Subclass
+------------------------------------------------------------------
+
+Objective:
+Create a Car class with attributes and methods to manage car details.
+Extend it to an ElectricCar subclass with additional attributes and methods.
+
+Tasks:
+Implement a class Car with attributes:
+brand, model, year, mileage
+
+Add methods:
+drive(distance): Increases mileage
+display_info(): Displays car details
+
+Create a subclass ElectricCar with additional attributes:
+battery_capacity, charge_level (default 100)
+
+Add a method:
+charge(amount): Increases charge level (max 100).
+
+Override display_info() to include battery details.
+Create objects for both classes and demonstrate method usage.
+
+2️⃣ Exercise: Implement a BankAccount Class and a SavingsAccount Subclass
+------------------------------------------------------------------
+
+Objective:
+Design a BankAccount class and extend it to a SavingsAccount subclass.
+
+Tasks:
+Create a class BankAccount with attributes:
+account_number, balance
+
+Add methods:
+deposit(amount), withdraw(amount), get_balance()
+
+Implement a subclass SavingsAccount with an additional attribute:
+interest_rate (default 2.5%)
+
+Add a method:
+add_interest(): Computes and adds interest to balance.
+
+Create objects and test deposits, withdrawals, and interest calculations.
+
+3️⃣ Exercise: Implement a Rectangle Class and a Cuboid Subclass
+------------------------------------------------------------------
+
+Objective:
+Implement a Rectangle class and extend it into a Cuboid subclass.
+
+Tasks:
+Create a Rectangle class with attributes:
+length, width
+
+Add methods:
+area(), perimeter(), is_square()
+
+Implement a Cuboid subclass with an additional attribute:
+height
+
+Add methods:
+volume(): Computes volume.
+surface_area(): Computes total surface area.
+
+Create objects and test area, volume, and surface area calculations.
+
+
+Session 2 [45]
+----------------------------------------------------------------------------------------------
+
+Exercise: Implement a Vector2D Class with Overloaded Operators
+----------------------------------------------------------------
+Objective:
+Implement a 2D vector class and overload operators for addition, subtraction, and comparison.
+
+Tasks:
+Create a class Vector2D with attributes:
+
+    x (horizontal component)
+
+    y (vertical component)
+
+Overload the following operators:
+
+    + (addition): Add corresponding x and y values of two vectors.
+
+    - (subtraction): Subtract corresponding x and y values.
+
+    == (equality): Check if two vectors are identical. Go into operator module and find out what is the
+                   function that needs to be overloaded to achieve this functionality
+
+Implement a __str__() method to display vectors as "(x, y)".
+
+Test your class with examples like:
+v1 = Vector2D(3, 4)
+v2 = Vector2D(1, 2)
+v3 = v1 + v2   # Should return Vector2D(4, 6)
+v4 = v1 - v2   # Should return Vector2D(2, 2)
+print(v3 == Vector2D(4, 6))  # Should return True
+
+
+Exercise: Implement a Time Class with Overloaded Operators
+----------------------------------------------------------------
+
+
+Objective:
+Create a Time class that allows addition of two time durations and comparisons.
+
+Tasks:
+Define a class Time with attributes:
+
+hours, minutes, seconds.
+
+Overload the following operators:
+
++ (addition): Add two time objects correctly handling overflow (e.g., 90 seconds = 1 min 30 sec).
+
+> (greater than): Compare two time objects based on total seconds. Go into operator module and find out what is the
+                   function that needs to be overloaded to achieve this functionality
+
+Implement a __str__() method to display time in "hh:mm:ss" format.
+
+Test your class with examples like:
+
+t1 = Time(1, 45, 50)
+t2 = Time(0, 30, 20)
+t3 = t1 + t2  # Should return Time(2, 16, 10)
+print(t1 > t2)  # Should return True
