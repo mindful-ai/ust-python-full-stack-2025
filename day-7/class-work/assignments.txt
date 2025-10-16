@@ -130,3 +130,28 @@ t1 = Time(1, 45, 50)
 t2 = Time(0, 30, 20)
 t3 = t1 + t2  # Should return Time(2, 16, 10)
 print(t1 > t2)  # Should return True
+
+Session 3 [20]
+----------------------------------------------------------------------------------------------
+
+Write a code to accept a person's fitness data (date, step, fitness, calories, water) and 
+persist it using pickle. The program should be able to display the the historical finess 
+record when asked for.
+
+python fitness.py 
+
+-> 12-10-2025, 8000, 2300, 5
+
+python fitness.py
+
+-> 13-10-2025, 8000, 2300, 4
+
+python fitness.py
+-> !
+
+12-10-2025, 8000, 2300, 5
+13-10-2025, 8000, 2300, 4
+
+Average steps: 8000
+Average calories: 2300
+Average water: 4.5 L
