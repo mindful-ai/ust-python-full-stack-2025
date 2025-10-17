@@ -1,0 +1,26 @@
+Python 3.12.4 (tags/v3.12.4:8e8a4ba, Jun  6 2024, 19:30:16) [MSC v.1940 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>> c = 'name,age,regid,phy,chem,math,bio,avg,rank\n'
+>>> r = 'Vijay,14,HPE001,99,98,97,96,0,0\n'
+>>> c = c.split(',')
+>>> r = r.split(',')
+>>> c
+['name', 'age', 'regid', 'phy', 'chem', 'math', 'bio', 'avg', 'rank\n']
+>>> r
+['Vijay', '14', 'HPE001', '99', '98', '97', '96', '0', '0\n']
+>>> c = [item.strip() for item in c]
+>>> r = [item.strip() for item in r] 
+>>> c
+['name', 'age', 'regid', 'phy', 'chem', 'math', 'bio', 'avg', 'rank']
+>>> r
+['Vijay', '14', 'HPE001', '99', '98', '97', '96', '0', '0']
+>>> sd = dict(zip(c, r))
+>>> sd
+{'name': 'Vijay', 'age': '14', 'regid': 'HPE001', 'phy': '99', 'chem': '98', 'math': '97', 'bio': '96', 'avg': '0', 'rank': '0'}
+>>> cd = {}
+>>> cd[sd['regid']] = sd
+>>> cd
+{'HPE001': {'name': 'Vijay', 'age': '14', 'regid': 'HPE001', 'phy': '99', 'chem': '98', 'math': '97', 'bio': '96', 'avg': '0', 'rank': '0'}}    
+>>>
+
+-----------------------------------------------------------------------------------------------------------------
