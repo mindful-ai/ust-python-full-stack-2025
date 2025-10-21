@@ -1,0 +1,37 @@
+Common unittest.Assert Methods:
+
+assertEqual(a, b)            # Passes if a == b
+assertNotEqual(a, b)         # Passes if a != b
+assertTrue(x)                # Passes if bool(x) is True
+assertFalse(x)               # Passes if bool(x) is False
+assertIs(a, b)               # Passes if a is b
+assertIsNot(a, b)            # Passes if a is not b
+assertIsNone(x)              # Passes if x is None
+assertIsNotNone(x)           # Passes if x is not None
+assertIn(a, b)               # Passes if a in b
+assertNotIn(a, b)            # Passes if a not in b
+assertIsInstance(a, type)    # Passes if isinstance(a, type) is True
+assertNotIsInstance(a, type) # Passes if isinstance(a, type) is False
+
+Exception and Warning Assertions:
+
+assertRaises(exception, func, *args, **kwargs)            # Checks if function raises the given exception
+assertRaisesRegex(exception, regex, func, *args, **kwargs) # Exception with matching regex
+assertWarns(warning, func, *args, **kwargs)               # Checks if function triggers a warning
+assertWarnsRegex(warning, regex, func, *args, **kwargs)   # Warning with matching regex
+
+Other Useful Assertions:
+
+assertAlmostEqual(a, b)           # Passes if a ≈ b (for float comparisons)
+assertNotAlmostEqual(a, b)        # Opposite of above
+assertGreater(a, b)               # Passes if a > b
+assertGreaterEqual(a, b)          # Passes if a >= b
+assertLess(a, b)                  # Passes if a < b
+assertLessEqual(a, b)             # Passes if a <= b
+assertMultiLineEqual(a, b)        # Passes if multi-line strings are equal
+assertSequenceEqual(a, b)         # Passes if sequences are equal
+assertListEqual(a, b)             # Passes if lists are equal
+assertTupleEqual(a, b)            # Passes if tuples are equal
+assertDictEqual(a, b)             # Passes if dictionaries are equal
+assertSetEqual(a, b)              # Passes if sets are equal
+assertCountEqual(a, b)            # Passes if both have same elements, regardless of order
