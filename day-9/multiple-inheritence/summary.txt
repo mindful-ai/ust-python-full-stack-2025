@@ -1,0 +1,6 @@
+Simple Multiple              -> Child inherits from two or more parents directly
+Multilevel + Multiple        -> Coombination of both multiple and multi-level inheritance
+Hybrid                       -> Combination of hierarchical and multiple inheritence
+Diamond                      -> Both parents share a common grand parents
+Mix-in                       -> Add extra utility functions without affecting main hierarchy
+
