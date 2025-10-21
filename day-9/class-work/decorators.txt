@@ -1,0 +1,29 @@
+Problem Statement #1:
+--------------------------------------------------------
+
+Write a decorator called @log_function that prints the name of the 
+function being called and its arguments before executing it.
+
+@log_function
+def greet(name):
+    print(f"Hello, {name}!")
+
+greet("Alice") 
+
+# Output: 
+# Calling function: greet 
+# Arguments: 'Alice'
+# Hello, Alice. How are you today?
+
+Problem Statement #2: 
+--------------------------------------------------------
+
+Write a decorator @double_result that doubles the result returned by any function.
+
+Example:
+
+@double_result
+def add(x, y):
+    return x + y
+
+print(add(3, 4))  # Output: 14
