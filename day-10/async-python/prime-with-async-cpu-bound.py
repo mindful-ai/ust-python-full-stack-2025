@@ -19,9 +19,8 @@ async def count_primes(limit):
 async def main():
     start = time.time()
     await asyncio.gather(
-        
-        count_primes(50000),
         count_primes(100000),
+        count_primes(50000),
         count_primes(10000)
     )
     end = time.time()

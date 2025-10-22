@@ -17,9 +17,9 @@ def count_primes(limit):
 
 def main():
     start = time.time()
+    count_primes(100000)
     count_primes(10000)
     count_primes(50000)
-    count_primes(100000)
     end = time.time()
     print(f"Total time: {end - start:.2f} seconds")
 
