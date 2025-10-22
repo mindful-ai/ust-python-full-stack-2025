@@ -1,0 +1,58 @@
+Stream-Based Line Filtering (Simulating Log Monitor) [15]
+--------------------------------------------------------
+
+You’re processing live logs and want to filter lines that contain a keyword, say "ERROR".
+Write a generator: filter_log_lines
+
+
+Example:
+
+# Simulated log lines (could also be read line-by-line from a real file)
+log_lines = [
+    "2025-04-07 INFO User logged in",
+    "2025-04-07 ERROR Failed to load resource",
+    "2025-04-07 DEBUG Memory usage stable",
+    "2025-04-07 ERROR Timeout occurred",
+]
+
+# Filter for error lines
+for error in filter_log_lines(log_lines, keyword="ERROR"):
+    print(">>", error)
+
+Output:
+>> 2025-04-07 ERROR Failed to load resource
+>> 2025-04-07 ERROR Timeout occurred
+
+
+2 Create a Text Processing Tool [15]
+--------------------------------------------------------
+Create a text-processing tool that reads a paragraph and returns each word 
+one at a time when iterated over. You want to build a custom iterator 
+class called WordIterator that takes a string of text and lets users 
+iterate through its words using a for loop or next().
+
+# Sample paragraph
+paragraph = "Python is a powerful and versatile programming language."
+
+# Create the iterator
+word_iter = WordIterator(paragraph)
+
+# Iterate through the words
+for word in word_iter:
+    print(word)
+
+# Output
+Python
+is
+a
+powerful
+and
+versatile
+programming
+language.
+
+3 Create a generator that will yield a line from a text file [15]
+-------------------------------------------------------------------------------------
+
+Create a generator: get_from_file(filename, chunk_size) that yield a chunk of data
+from the file specified
