@@ -66,20 +66,6 @@ class LinkedList:
 
 if __name__ == "__main__":
 
-    ll = LinkedList()
+    pass
 
-    for i in range(10):
-        ll.append(random.randint(1, 100))
-
-    ll.display()
-
-    ll.prepend(10)
-    ll.prepend(20)
-    ll.prepend(30)
-
-    ll.display()
-
-    ll.delete(10)
-
-    ll.display()
 
