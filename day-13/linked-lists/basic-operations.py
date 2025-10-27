@@ -27,11 +27,63 @@ class LinkedList:
         new_node.next = self.head
         self.head = new_node
 
-    def insert(self, data):
-        pass
+    def insert(self, data, pos):
+        new_node = Node(data)
 
-    def sort(self, data):
-        pass
+        # If the position is at the beginning
+        if pos == 0:
+            self.prepend(data)
+            return
+        
+        # Move to the desired position
+        curr = self.head
+        index = 0
+        while curr and index < pos - 1:
+            curr = curr.next
+            index += 1
+
+        # If the position is at the end
+        if not curr:
+            print("Index out of range")
+            self.append(data)
+            return
+        
+        # Otherwise
+        new_node.next = curr.next
+        curr.next = new_node
+
+
+    # bubble sort -> simply re-arranging the node links
+    def sort(self, key=True):
+        # Empty list or only one node -> nothing to sort
+        if not self.head or not self.head.next:
+            return
+        
+        end = None
+        while end != self.head:
+            prev = None
+            current = self.head
+            while current.next != end:
+                next = current.next
+                if current.data > next.data:
+
+                    # swapping
+                    current.next = next.next
+                    next.next = current
+                    if prev is None: # if the head is involved in swap
+                        self.head = next
+                    else:
+                        prev.next = next
+
+                    # references should be reset
+                    prev = next
+                else:
+                    prev = current
+                    current = current.next
+            end = current
+
+                
+
 
     def delete(self, key):
         curr = self.head
@@ -66,6 +118,27 @@ class LinkedList:
 
 if __name__ == "__main__":
 
-    pass
+    ll = LinkedList()
 
+    for i in range(10):
+        ll.append(random.randint(1, 100))
 
+    ll.display()
+
+    ll.prepend(10)
+    ll.prepend(20)
+    ll.prepend(30)
+
+    ll.display()
+
+    ll.delete(10)
+
+    ll.display()
+
+    ll.insert(45, 1)
+
+    ll.display()
+
+    ll.sort()
+
+    ll.display()
