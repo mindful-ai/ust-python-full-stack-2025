@@ -1,0 +1,101 @@
+Patient_ID,Name,Age,Gender,Condition,Blood_Group,City
+P001,Luke Jones,73,Female,Depression,B+,Pune
+P002,Claudia Gomez,20,Other,Liver Disease,O+,Lucknow
+P003,Kristen Bell,18,Female,Bronchitis,AB+,Jaipur
+P004,Maria White,8,Male,Pneumonia,O+,Pune
+P005,April Bishop,80,Other,Pneumonia,B+,Chennai
+P006,Stephen White,89,Female,Bronchitis,AB+,Lucknow
+P007,Caroline Quinn,31,Male,Infection - Viral,AB-,Delhi
+P008,John Wilson,64,Female,Diabetes,O-,Lucknow
+P009,Tom Middleton,15,Male,Infection - Bacterial,AB-,Jaipur
+P010,Beth Benton,3,Female,Hypertension,A+,Chennai
+P011,James Russo,68,Female,Hypertension,B-,Jaipur
+P012,Jessica Wright,12,Female,Cancer,AB-,Hyderabad
+P013,Jennifer Bond,30,Male,Anemia,O-,Jaipur
+P014,Michael Gordon,45,Male,Skin Allergy,O-,Pune
+P015,Amy Martin DDS,20,Other,Migraine,A+,Mumbai
+P016,Brian Cooper,36,Other,Arthritis,B-,Pune
+P017,Dakota Martinez,40,Female,Anemia,A-,Lucknow
+P018,Clayton Cain,40,Other,Anxiety,A-,Chennai
+P019,Teresa Wall,66,Other,Bronchitis,B+,Hyderabad
+P020,Kathy Chen,63,Other,Heart Disease,AB+,Bangalore
+P021,Lawrence Camacho,31,Other,Anxiety,B+,Jaipur
+P022,Diane Howell,40,Other,Infection - Viral,B-,Bangalore
+P023,Paul Parker,33,Other,Arthritis,AB-,Delhi
+P024,Aaron Allen,42,Other,Thyroid Disorder,B-,Chennai
+P025,Matthew Castro,42,Other,Anxiety,AB+,Chennai
+P026,Caleb Santana,20,Other,Kidney Stone,B+,Bangalore
+P027,Alejandro Hunt,78,Male,Thyroid Disorder,B+,Delhi
+P028,Miss Barbara Erickson,70,Other,Infection - Bacterial,O-,Hyderabad
+P029,James Jackson,73,Female,Anxiety,AB-,Delhi
+P030,Roy Gillespie,9,Female,Anxiety,B-,Jaipur
+P031,Sara Leonard,57,Male,Anxiety,B+,Lucknow
+P032,Kathryn Simmons,32,Male,Skin Allergy,A+,Pune
+P033,Charles Randolph,8,Female,Tuberculosis,A-,Kolkata
+P034,Michelle Anderson,22,Female,Anemia,O+,Lucknow
+P035,Jennifer Thomas,2,Male,Anxiety,AB+,Ahmedabad
+P036,Henry Russell,54,Female,Anxiety,O+,Bangalore
+P037,Steve Myers,13,Other,Hypertension,O+,Hyderabad
+P038,Stephanie Bell,40,Female,Heart Disease,B-,Lucknow
+P039,Leonard Hardin,88,Female,Anemia,A-,Ahmedabad
+P040,Glenn Mcintosh,46,Male,Obesity,A+,Kolkata
+P041,John Jones,2,Other,Skin Allergy,O-,Pune
+P042,Megan Robinson,53,Other,Infection - Bacterial,B+,Ahmedabad
+P043,Cynthia Lee,19,Female,Depression,AB-,Hyderabad
+P044,Brittney Thompson,60,Female,Obesity,O+,Bangalore
+P045,Michael West,90,Male,Anemia,O+,Pune
+P046,Lacey Delacruz,89,Other,Infection - Bacterial,AB-,Hyderabad
+P047,Molly Bryant,49,Other,Infection - Bacterial,B+,Jaipur
+P048,Richard Lopez,87,Female,Obesity,A+,Ahmedabad
+P049,Allen Hines,31,Male,Thyroid Disorder,A-,Kolkata
+P050,Kelly Brown,21,Other,Hypertension,A-,Delhi
+P051,Krystal Miller,78,Female,Anemia,A-,Chennai
+P052,Richard Jones,26,Male,Cancer,B+,Lucknow
+P053,Marcus Tran,69,Female,Liver Disease,B-,Lucknow
+P054,Jennifer Rogers,84,Female,Anemia,O+,Hyderabad
+P055,Kenneth Schmidt,67,Other,Thyroid Disorder,A+,Bangalore
+P056,Keith Mitchell,57,Other,Migraine,A-,Jaipur
+P057,James Williams,11,Female,Anemia,A-,Jaipur
+P058,Ashley Simpson,76,Female,Obesity,A+,Jaipur
+P059,Seth Mcmahon,71,Other,Bronchitis,A+,Chennai
+P060,Kenneth Duarte,65,Female,Infection - Bacterial,O-,Kolkata
+P061,Mary Lee,66,Other,Skin Allergy,A-,Mumbai
+P062,Claire Townsend,4,Female,Skin Allergy,A+,Delhi
+P063,Clayton Ward,28,Male,Pneumonia,AB-,Chennai
+P064,Hayden Nguyen,25,Male,Tuberculosis,A+,Mumbai
+P065,Brandon Hampton,10,Female,Obesity,AB+,Pune
+P066,Andrew Owens,81,Other,Heart Disease,O-,Kolkata
+P067,Autumn Gordon,39,Other,Migraine,A-,Bangalore
+P068,David Marquez,23,Male,Arthritis,A+,Mumbai
+P069,Steven Snow,8,Other,Cancer,A+,Hyderabad
+P070,Carl Michael,47,Female,Obesity,AB-,Delhi
+P071,Billy Roberts,75,Female,Skin Allergy,A-,Kolkata
+P072,Crystal Salinas,19,Male,Diabetes,B+,Kolkata
+P073,Craig Hess,64,Female,Arthritis,B+,Kolkata
+P074,Erica Bell,74,Other,Infection - Viral,O-,Hyderabad
+P075,Julia Hall DVM,41,Female,Liver Disease,A-,Ahmedabad
+P076,Jennifer Brown,42,Female,Asthma,O-,Chennai
+P077,Michelle Nelson,41,Other,Cancer,AB-,Kolkata
+P078,Nathaniel Cuevas,52,Other,Obesity,O+,Jaipur
+P079,Jose Hill,53,Female,Asthma,A-,Kolkata
+P080,William Rodriguez,12,Female,Pneumonia,A+,Lucknow
+P081,Johnny Tucker,27,Other,Arthritis,AB+,Jaipur
+P082,Ryan Smith,64,Other,Pneumonia,AB-,Hyderabad
+P083,Alec Vazquez,4,Male,Arthritis,AB+,Bangalore
+P084,Alex Rojas,56,Male,Obesity,O-,Kolkata
+P085,Kelly Fleming,80,Other,Heart Disease,O+,Delhi
+P086,Scott Gonzalez,54,Female,Infection - Bacterial,AB+,Bangalore
+P087,Erica Anderson,11,Female,Arthritis,O+,Pune
+P088,Tina Solomon,56,Male,Pneumonia,AB-,Ahmedabad
+P089,John Barber,46,Male,Infection - Viral,B-,Bangalore
+P090,Christian Reilly,47,Female,Asthma,A-,Ahmedabad
+P091,Megan Lawson,79,Female,Arthritis,A+,Ahmedabad
+P092,Regina Wilson,90,Male,Kidney Stone,A-,Mumbai
+P093,Matthew Moore,77,Female,Cancer,AB+,Chennai
+P094,Joseph Mcclure,39,Male,Tuberculosis,A-,Kolkata
+P095,Douglas Merritt,6,Female,Anemia,B-,Ahmedabad
+P096,Michael Hawkins,29,Other,Kidney Stone,B+,Hyderabad
+P097,Brandon Smith,63,Female,Kidney Stone,A+,Bangalore
+P098,Lisa Smith,72,Male,Pneumonia,O-,Mumbai
+P099,Amy Andrews,5,Other,Asthma,A-,Pune
+P100,Tina Baker,70,Other,Diabetes,A+,Mumbai

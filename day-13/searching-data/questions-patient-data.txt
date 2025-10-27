@@ -1,0 +1,9 @@
+Find all patients:
+
+ - whose Condition contains the keyword "Infection" or "Diabetes",
+ - and who are above 60 years old,
+ - and live in either Mumbai or Delhi.
+
+ Write a function that finds all female patients with Blood Group "O+" and a Condition that includes the word "Anemia".
+
+ List all the unique health conditions and the number of patients registered for that condition
