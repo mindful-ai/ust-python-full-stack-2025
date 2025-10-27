@@ -1,0 +1,18 @@
+Level order insertion is a method for adding a new node to a binary tree by finding the first available 
+spot level by level, starting from the root. To do this, you use a queue to perform a breadth-first search (BFS), 
+inserting the new node as the left or right child of the first node encountered that has an empty spot. 
+
+The process continues until the new node is successfully inserted, ensuring the tree remains complete from left to right.  
+
+How level order insertion works
+
+    Initialize a queue: Create an empty queue and add the root node to it. 
+    Iterate through the tree: While the queue is not empty, dequeue a node. 
+    Check for an empty spot:
+    If the dequeued node's left child is null, insert the new node there and stop. 
+    Else, if the node's left child is not null, enqueue it.
+    If the node's right child is null, insert the new node there and stop. 
+    Else, if the node's right child is not null, enqueue it. 
+
+Repeat: Continue this process until the new node has been inserted into an empty spot. 
+This ensures that the tree is filled level by level from left to right, similar to how a heap is structured. 
