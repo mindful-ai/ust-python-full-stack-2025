@@ -1,0 +1,37 @@
+Compress a text file using the huffman algorithm -> compressed file
+Also, in order to test decompression, decompress the file and check the integrity of the file
+(How to compare two text files?)
+
+Print the compression ratio for the given file
+
+CHoose a file ot at least 5 MB (text)
+
+You can also generate text using a script:
+
+---------------------------------------------------------------------------------------
+import random
+
+# Some common English words
+words = ["data", "compression", "algorithm", "python", "encoding", "decode",
+         "tree", "graph", "machine", "learning", "huffman", "test", "system",
+         "analysis", "network", "model", "performance", "byte", "string", "code"]
+
+# Generate about 5 MB text
+target_size = 5 * 1024 * 1024  # 5 MB in bytes
+text = ""
+
+while len(text.encode('utf-8')) < target_size:
+    text += " ".join(random.choices(words, k=50)) + "\n"
+
+with open("large_text.txt", "w", encoding="utf-8") as f:
+    f.write(text)
+
+print("✅ Generated large_text.txt (~5MB)")
+---------------------------------------------------------------------------------------
+
+Get text from:
+Project Gutenberg:
+
+https://www.gutenberg.org/cache/epub/100/pg100.txt
+
+
