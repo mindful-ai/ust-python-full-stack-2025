@@ -43,221 +43,198 @@ SmartPharma is a digital pharmacy management system that manages:
 ## 🧠 Case Study Code Example
 
 ```python
-from abc import ABC, abstractmethod
+# ========================
+# 1. Chain of Responsibility
+# ========================
 
-# ==================== Chain of Responsibility ====================
-class Handler(ABC):
+class Handler:
     def __init__(self, successor=None):
         self.successor = successor
 
-    @abstractmethod
-    def handle_request(self, prescription):
-        pass
+    def handle(self, prescription):
+        if self.successor:
+            return self.successor.handle(prescription)
 
-class PharmacistHandler(Handler):
-    def handle_request(self, prescription):
-        if prescription["type"] == "common":
-            print(f"Pharmacist handled prescription for {prescription['medicine']}")
-        elif self.successor:
-            self.successor.handle_request(prescription)
 
-class DoctorHandler(Handler):
-    def handle_request(self, prescription):
-        if prescription["type"] == "critical":
-            print(f"Doctor approved prescription for {prescription['medicine']}")
-        elif self.successor:
-            self.successor.handle_request(prescription)
+class DoctorSignatureCheck(Handler):
+    def handle(self, prescription):
+        if not prescription.get("doctor_signed", False):
+            print("❌ Prescription rejected: Doctor signature missing.")
+            return False
+        print("✅ Doctor signature verified.")
+        return super().handle(prescription)
 
-class SpecialistHandler(Handler):
-    def handle_request(self, prescription):
-        if prescription["type"] == "special":
-            print(f"Specialist approved prescription for {prescription['medicine']}")
-        else:
-            print("No handler available for this prescription type.")
 
-# ==================== Command Pattern ====================
-class Command(ABC):
-    @abstractmethod
+class StockCheck(Handler):
+    def __init__(self, stock, successor=None):
+        super().__init__(successor)
+        self.stock = stock
+
+    def handle(self, prescription):
+        if prescription["medicine"] not in self.stock:
+            print("❌ Medicine not available.")
+            return False
+        print("✅ Medicine available in stock.")
+        return super().handle(prescription)
+
+
+class ExpiryCheck(Handler):
+    def handle(self, prescription):
+        print("✅ Expiry date verified.")
+        return True
+
+
+# ========================
+# 2. Command Pattern
+# ========================
+
+class Command:
     def execute(self):
         pass
+
 
 class PlaceOrderCommand(Command):
-    def __init__(self, pharmacy, medicine):
-        self.pharmacy = pharmacy
+    def __init__(self, receiver, medicine):
+        self.receiver = receiver
         self.medicine = medicine
 
     def execute(self):
-        self.pharmacy.place_order(self.medicine)
+        self.receiver.place_order(self.medicine)
 
-class RefillStockCommand(Command):
-    def __init__(self, pharmacy, medicine, qty):
-        self.pharmacy = pharmacy
+
+class CancelOrderCommand(Command):
+    def __init__(self, receiver, medicine):
+        self.receiver = receiver
         self.medicine = medicine
-        self.qty = qty
 
     def execute(self):
-        self.pharmacy.refill_stock(self.medicine, self.qty)
+        self.receiver.cancel_order(self.medicine)
 
-# ==================== Mediator Pattern ====================
-class PharmacyMediator:
-    def __init__(self):
-        self.pharmacist = None
-        self.inventory_manager = None
-        self.payment_processor = None
-        self.notification_service = None
 
-    def register_components(self, pharmacist, inventory_manager, payment_processor, notification_service):
-        self.pharmacist = pharmacist
-        self.inventory_manager = inventory_manager
-        self.payment_processor = payment_processor
-        self.notification_service = notification_service
+# ========================
+# 3. Mediator Pattern
+# ========================
 
-    def notify(self, sender, event, data=None):
-        if event == "prescription_processed":
-            print("[Mediator] Pharmacist processed a prescription. Checking inventory...")
-            self.inventory_manager.check_stock(data)
-        elif event == "stock_checked":
-            print("[Mediator] Inventory checked. Proceeding to payment...")
-            self.payment_processor.process_payment(data)
-        elif event == "payment_successful":
-            print("[Mediator] Payment done. Sending notification...")
-            self.notification_service.send_notification(data)
-        else:
-            print("[Mediator] No handler for event:", event)
-
-# ==================== Colleague Classes ====================
-class Pharmacist:
-    def __init__(self, mediator):
-        self.mediator = mediator
-
-    def process_prescription(self, prescription):
-        print(f"Pharmacist processing {prescription['medicine']}")
-        self.mediator.notify(self, "prescription_processed", prescription)
-
-class InventoryManager:
-    def __init__(self, mediator):
-        self.mediator = mediator
-        self.stock = {"Paracetamol": 10, "Antibiotic": 5}
-
-    def check_stock(self, prescription):
-        med = prescription["medicine"]
-        if self.stock.get(med, 0) > 0:
-            print(f"InventoryManager: {med} is in stock.")
-            self.stock[med] -= 1
-            self.mediator.notify(self, "stock_checked", prescription)
-        else:
-            print(f"InventoryManager: {med} out of stock!")
-
-class PaymentProcessor:
-    def __init__(self, mediator):
-        self.mediator = mediator
-
-    def process_payment(self, prescription):
-        print(f"PaymentProcessor: Processing payment for {prescription['medicine']}...")
-        self.mediator.notify(self, "payment_successful", prescription)
-
-class NotificationService:
-    def __init__(self, mediator):
-        self.mediator = mediator
-
-    def send_notification(self, prescription):
-        print(f"NotificationService: Message sent to patient about {prescription['medicine']}")
-
-# ==================== Memento Pattern ====================
-class PharmacyMemento:
-    def __init__(self, state):
-        self.state = state.copy()
-
-class PharmacyHistory:
-    def __init__(self):
-        self.history = []
-
-    def save(self, memento):
-        self.history.append(memento)
-
-    def restore(self, index):
-        return self.history[index]
-
-# ==================== Visitor Pattern ====================
-class ReportVisitor(ABC):
-    @abstractmethod
-    def visit(self, pharmacy):
+class Mediator:
+    def notify(self, sender, event):
         pass
 
-class SalesReportVisitor(ReportVisitor):
-    def visit(self, pharmacy):
-        print(f"Sales Report: Total medicines sold = {pharmacy.medicines_sold}")
 
-# ==================== Pharmacy Core ====================
-class Pharmacy:
+class PharmacyMediator(Mediator):
     def __init__(self):
-        self.stock = {"Paracetamol": 10, "Antibiotic": 5}
-        self.medicines_sold = 0
+        self.inventory = None
+        self.billing = None
+        self.notification = None
 
-    def place_order(self, medicine):
-        if self.stock.get(medicine, 0) > 0:
-            self.stock[medicine] -= 1
-            self.medicines_sold += 1
-            print(f"Order placed for {medicine}")
-        else:
-            print(f"{medicine} is out of stock")
+    def notify(self, sender, event):
+        if event == "order_placed":
+            self.billing.generate_bill(sender)
+            self.notification.send_notification("Order placed successfully!")
+        elif event == "out_of_stock":
+            self.notification.send_notification("Medicine out of stock!")
 
-    def refill_stock(self, medicine, qty):
-        self.stock[medicine] = self.stock.get(medicine, 0) + qty
-        print(f"Stock refilled: {medicine} -> {self.stock[medicine]} units")
 
-    def accept(self, visitor):
-        visitor.visit(self)
+# ========================
+# 4. Memento Pattern
+# ========================
 
-# ==================== Client Code ====================
-def main():
-    print("\n=== SmartPharma System (with Mediator) ===")
+class OrderMemento:
+    def __init__(self, state):
+        self._state = state
 
-    # Mediator setup
-    mediator = PharmacyMediator()
-    pharmacist = Pharmacist(mediator)
-    inventory_manager = InventoryManager(mediator)
-    payment_processor = PaymentProcessor(mediator)
-    notification_service = NotificationService(mediator)
+    def get_state(self):
+        return self._state
 
-    mediator.register_components(pharmacist, inventory_manager, payment_processor, notification_service)
 
-    # Chain of Responsibility setup
-    handler_chain = PharmacistHandler(DoctorHandler(SpecialistHandler()))
+class OrderHistory:
+    def __init__(self):
+        self._history = []
 
-    # Create pharmacy system
-    pharmacy = Pharmacy()
+    def save(self, state):
+        self._history.append(OrderMemento(state))
 
-    # History and visitor
-    history = PharmacyHistory()
-    visitor = SalesReportVisitor()
+    def undo(self):
+        if self._history:
+            return self._history.pop().get_state()
 
-    # Prescription handling via Chain
-    prescriptions = [
-        {"medicine": "Paracetamol", "type": "common"},
-        {"medicine": "Antibiotic", "type": "critical"}
-    ]
 
-    for p in prescriptions:
-        handler_chain.handle_request(p)
-        pharmacist.process_prescription(p)
+# ========================
+# 5. Observer Pattern
+# ========================
 
-    # Commands
-    order = PlaceOrderCommand(pharmacy, "Paracetamol")
-    refill = RefillStockCommand(pharmacy, "Antibiotic", 10)
+class Observer:
+    def update(self, message):
+        pass
 
-    order.execute()
-    refill.execute()
 
-    # Save system state
-    history.save(PharmacyMemento(pharmacy.stock))
+class Customer(Observer):
+    def update(self, message):
+        print(f"Customer received: {message}")
 
-    # Visitor
-    pharmacy.accept(visitor)
+
+class Pharmacist(Observer):
+    def update(self, message):
+        print(f"Pharmacist alert: {message}")
+
+
+class Inventory:
+    def __init__(self):
+        self.observers = []
+        self.stock = {"Paracetamol": 10}
+
+    def attach(self, observer):
+        self.observers.append(observer)
+
+    def notify(self, message):
+        for obs in self.observers:
+            obs.update(message)
+
+    def restock(self, item, qty):
+        self.stock[item] = self.stock.get(item, 0) + qty
+        self.notify(f"{item} restocked with {qty} units.")
+
+
+# ========================
+# 6. Visitor Pattern
+# ========================
+
+class Visitor:
+    def visit(self, element):
+        pass
+
+
+class SalesReportVisitor(Visitor):
+    def visit(self, element):
+        print(f"Generating report for {element.__class__.__name__}...")
+
+
+# ========================
+# Main Demonstration
+# ========================
 
 if __name__ == "__main__":
-    main()
+    # Chain of Responsibility
+    stock = {"Paracetamol": 10, "Amoxicillin": 5}
+    chain = DoctorSignatureCheck(StockCheck(stock, ExpiryCheck()))
 
+    prescription = {"doctor_signed": True, "medicine": "Paracetamol"}
+    chain.handle(prescription)
+
+    # Command
+    class OrderReceiver:
+        def place_order(self, med): print(f"Order placed for {med}")
+        def cancel_order(self, med): print(f"Order cancelled for {med}")
+
+    receiver = OrderReceiver()
+    place_order = PlaceOrderCommand(receiver, "Paracetamol")
+    place_order.execute()
+
+    # Observer
+    inventory = Inventory()
+    c1, p1 = Customer(), Pharmacist()
+    inventory.attach(c1)
+    inventory.attach(p1)
+    inventory.restock("Amoxicillin", 20)
 ```
 
 ---
