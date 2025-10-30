@@ -1,0 +1,8 @@
+Assemeble the code in each case test it
+
+-----------------------------------------
+
+In case of SmartCampus:
+
+1. Upgrade the design to use sqlite3 for database
+2. Convert this into an installable application using setuptools and test the process
