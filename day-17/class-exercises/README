@@ -1,0 +1,19 @@
+Organize mydir folder:
+    - keep empty folders as they are
+    - files without extention should be kept in ./others
+    - directories are randomly named - use the extention names as directories
+    - delete un-needed folders after re-organizing
+
+Desired output:
+ - 01
+ - 02
+ - txt
+ - py
+ - jpg
+ - xls
+ - others
+
+
+----------------------------------------------------------------------------------------------------------
+
+Build a simple TKinter GUI that accepts temperature in celcius and converts it into fahrenheit
