@@ -1,0 +1,27 @@
+2025-11-05 15:34:31,329 - ERROR - Frontend Error
+Traceback (most recent call last):
+  File "E:\Lenovo Ideapad 330\company-material\ust-python-fs\day-20\complete-project\streamlit_app.py", line 41, in <module>
+    st.success(f"Prediction: {result['prediction']} (probability = {result['probability']:.2f})")
+                                                                    ~~~~~~^^^^^^^^^^^^^^^
+KeyError: 'probability'
+2025-11-05 15:34:34,387 - ERROR - Frontend Error
+Traceback (most recent call last):
+  File "E:\Lenovo Ideapad 330\company-material\ust-python-fs\day-20\complete-project\streamlit_app.py", line 41, in <module>
+    st.success(f"Prediction: {result['prediction']} (probability = {result['probability']:.2f})")
+                                                                    ~~~~~~^^^^^^^^^^^^^^^
+KeyError: 'probability'
+2025-11-05 15:34:39,207 - ERROR - Frontend Error
+Traceback (most recent call last):
+  File "E:\Lenovo Ideapad 330\company-material\ust-python-fs\day-20\complete-project\streamlit_app.py", line 41, in <module>
+    st.success(f"Prediction: {result['prediction']} (probability = {result['probability']:.2f})")
+                                                                    ~~~~~~^^^^^^^^^^^^^^^
+KeyError: 'probability'
+2025-11-05 15:39:12,681 - ERROR - Frontend Error
+Traceback (most recent call last):
+  File "E:\Lenovo Ideapad 330\company-material\ust-python-fs\day-20\complete-project\streamlit_app.py", line 41, in <module>
+    prob_text = f" (Probability = {result['probability']:.2f})" if result["probability"] else ""
+                                                                   ~~~~~~^^^^^^^^^^^^^^^
+KeyError: 'probability'
+2025-11-05 15:41:05,570 - INFO - User input: {'age': 50, 'sex': 0, 'cp': 0, 'trestbps': 120, 'chol': 200, 'fbs': 0, 'restecg': 0, 'thalach': 150, 'exang': 0, 'oldpeak': 1.0, 'slope': 0, 'ca': 0, 'thal': 1} -> Result: {'prediction': 0, 'result': 'No Heart Disease', 'probability': 0.023876571464031653}
+2025-11-05 15:42:00,912 - INFO - User input: {'age': 50, 'sex': 0, 'cp': 2, 'trestbps': 120, 'chol': 200, 'fbs': 1, 'restecg': 0, 'thalach': 150, 'exang': 1, 'oldpeak': 1.0, 'slope': 2, 'ca': 2, 'thal': 1} -> Result: {'prediction': 0, 'result': 'No Heart Disease', 'probability': 0.3180297985932132}
+2025-11-05 15:42:38,506 - INFO - User input: {'age': 50, 'sex': 0, 'cp': 2, 'trestbps': 180, 'chol': 300, 'fbs': 1, 'restecg': 0, 'thalach': 200, 'exang': 1, 'oldpeak': 1.0, 'slope': 2, 'ca': 2, 'thal': 1} -> Result: {'prediction': 1, 'result': 'Heart Disease Detected', 'probability': 0.5301659215104275}
