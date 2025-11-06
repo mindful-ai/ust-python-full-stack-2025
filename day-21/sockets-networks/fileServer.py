@@ -1,7 +1,7 @@
 import socket
 import threading
 import os
-os.chdir(r"C:\Users\Purushotham\Desktop\oracle_july\day_05\network_ex")
+os.chdir(r"C:\mindful-ai\ust-global-python-fs\day-6\case-studies\student-report")
 def RetrFile(name, sock):
     filename = sock.recv(1024)
     print(filename)
