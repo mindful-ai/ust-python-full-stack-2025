@@ -59,6 +59,7 @@
 
             
             require(['myfunctions'], function(f){
+              console.log(f);
               $("#result").text(f.getresult(op, Number(opa), Number(opb)));
             });
 
