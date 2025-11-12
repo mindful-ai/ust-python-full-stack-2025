@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Play Word Jumble</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-blue-50 min-h-screen flex flex-col justify-center items-center">
+  <div class="bg-white p-8 rounded-2xl shadow-md w-96 text-center">
+    <h2 class="text-2xl font-bold text-purple-700 mb-6">Unscramble the Word</h2>
+    <p id="jumbledWord" class="text-3xl font-mono mb-6 text-gray-800"></p>
+    
+    <input id="userInput" type="text" placeholder="Your guess" class="border p-2 w-full mb-4 text-center rounded-lg" />
+    <button onclick="checkAnswer()" class="bg-purple-600 text-white w-full py-2 rounded-lg hover:bg-purple-700">Submit</button>
+    
+    <p id="feedback" class="mt-4 text-lg font-semibold"></p>
+    <p id="progress" class="mt-6 text-sm text-gray-600"></p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
