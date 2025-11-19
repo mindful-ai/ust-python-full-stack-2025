@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Calculator</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'calculatorapp/calculator.css' %}">
+</head>
+<body class="bg-gray-100 flex items-center justify-center h-screen">
+    <form method="post" class="bg-white p-8 rounded shadow-md w-96">
+        {% csrf_token %}
+        <h2 class="text-xl font-bold mb-4">Simple Calculator</h2>
+
+        <label class="block mb-2">Enter A:</label>
+        <input type="number" step="any" name="a" class="w-full border px-2 py-1 mb-4 rounded" required>
+
+        <label class="block mb-2">Enter B:</label>
+        <input type="number" step="any" name="b" class="w-full border px-2 py-1 mb-4 rounded" required>
+
+        <div class="mb-4">
+            <label class="mr-4"><input type="radio" name="operation" value="add" required> Add</label><br>
+            <label class="mr-4"><input type="radio" name="operation" value="subtract"> Subtract</label><br>
+            <label class="mr-4"><input type="radio" name="operation" value="multiply"> Multiply</label><br>
+            <label class="mr-4"><input type="radio" name="operation" value="divide"> Divide</label><br>
+        </div>
+
+        <button type="submit" class="w-full bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">
+            Calculate
+        </button>
+
+        {% if result is not None %}
+            <div id="result" class="mt-6 text-center text-2xl font-bold text-green-600">
+                Result: {{ result }}
+            </div>
+        {% endif %}
+    </form>
+
+    <script src="{% static 'calculatorapp/calculator.js' %}"></script>
+</body>
+</html>

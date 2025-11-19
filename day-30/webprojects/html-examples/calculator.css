@@ -1,0 +1,13 @@
+/* Optional custom styling */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+input, button {
+    transition: all 0.2s ease;
+}
+
+input:focus, button:hover {
+    outline: none;
+    box-shadow: 0 0 0 2px #3b82f6;
+}
