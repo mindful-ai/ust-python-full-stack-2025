@@ -10,9 +10,11 @@ django-admin --version
 
 ### Creating a project
 
+```bash
 mkdir webprojects
 cd webprojects
 django-admin startproject firstproject
+```
 
 ### Create an app
 
@@ -164,4 +166,5 @@ To add a HTML file
 
 -   Add a html file to templates/
 -   Update views.py
+
 -   Update urls.py
