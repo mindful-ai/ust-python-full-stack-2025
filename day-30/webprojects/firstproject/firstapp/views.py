@@ -14,7 +14,21 @@ def info_json(request):
     return JsonResponse(data)
 
 def index(request):
-    return render(request, "index.html")
+    return render(request, "child.html")
 
 def calc(request):
     return render(request, "calculator.html")
+
+def show_values(request):
+    context = {
+        "name": "Rahul", 
+        "age": 25,
+        "status": False,
+        "fruits": ["Apple", "Banana", "Mango", "Orange"],
+        "students": ["Anil", "Sunil", "Asha", "Usha"],
+        "emp": {
+            "name": "Manoj", "dept": "IT", "salary": 50000
+        }
+    }
+    return render(request, "templates.html", context=context)
+

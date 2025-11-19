@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My Site</title>
+    </head>
+    <body>
+        
+
+        <header>
+            <h1>My Website</h1>
+        </header>
+
+        {% include "navbar.html" %}
+
+        <section>
+            {% block content %}
+            {% endblock %}
+        </section>
+
+        <footer>
+            <p>© 2025 MySite</p>
+    </footer>
+
+    </body>
+</html>

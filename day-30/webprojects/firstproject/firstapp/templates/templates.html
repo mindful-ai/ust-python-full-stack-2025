@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>User Profile</h3>
+    <h5>Name: {{ name }}</h5>
+    <h5>Age : {{ age }}</h5>
+
+    {% if status %}
+        <h5>Welcome {{ name }}, enjoy your benefits</h5>
+    {% else %}
+        <h5>Please register to enjoy benefits</h5>
+    {% endif %}
+
+    <ul>
+        {% for fruit in fruits %}
+            <li>{{ fruit }}</li>
+        {% endfor %}
+    </ul>
+
+    <ul>
+        {% for student in students %}
+        <li>
+            {{ forloop.counter }}. {{ student }}
+            {% if forloop.first %} (First Entry) {% endif %}
+            {% if forloop.last %} (Last Entry) {% endif %}
+        </li>
+        {% endfor %}
+    </ul>
+
+    <h3>Employee Information</h3>
+
+    <h4>Name       :   {{ emp.name }}</h4>
+    <h4>Department :   {{ emp.dept }}</h4>
+    <h4>Salary     :   {{ emp.salary }}</h4>
+
+    <h3>Using filters</h3>
+    <h4>Name       :   {{ emp.name|upper }}</h4>
+    <h4>Name       :   {{ emp.name|length }}</h4>
+
+</body>
+</html>
