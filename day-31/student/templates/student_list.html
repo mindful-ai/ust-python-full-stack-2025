@@ -1,0 +1,7 @@
+<h2>All Students</h2>
+
+<ul>
+{% for stud in students %}
+    <li>{{ stud.full_name }} — {{ stud.course.name }}</li>
+{% endfor %}
+</ul>
