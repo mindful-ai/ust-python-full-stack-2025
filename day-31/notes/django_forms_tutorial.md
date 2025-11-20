@@ -171,3 +171,233 @@ python manage.py runserver
 
 
 NOTE: Do not forget to register the student app in INSTALLED_APPS in settings.py
+
+### Analysing the forms request and it's body
+
+```python
+
+def contact_admin(request):
+    if request.method == "POST":
+        form = ContactAdminForm(request.POST)
+        if form.is_valid():
+
+            # Extract submitted values
+            subject = form.cleaned_data['subject']
+            message = form.cleaned_data['message']
+            email = form.cleaned_data['email']
+
+            # Print to console/log
+            print("Request: ", request.POST)
+            print("Body: ", form)
+            print("Subject:", subject)
+            print("Message:", message)
+            print("Email:", email)
+
+            return render(request, "contact_success.html", {
+                "subject": subject,
+                "message": message,
+                "email": email
+            })
+
+    else:
+        form = ContactAdminForm()
+
+    return render(request, "contact_form.html", {"form": form})
+
+```
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contact Admin</title>
+</head>
+<body>
+
+<h2>Contact Admin Form</h2>
+
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+
+    <button type="submit">Send</button>
+</form>
+
+</body>
+</html>
+
+```
+
+You still need to:
+- Create the contact_success html template
+- URL update
+
+### Navigating between pages
+
+```html
+<a href="{% url 'add_student' %}"><button>Send Another Message</button></a>
+```
+
+
+```html
+<a href="{% url 'contact_admin' %}"><button>Contact Admin</button></a>
+
+```
+
+-   In add_student
+
+```html
+<a href="{% url 'calc' %}"><button>Use Calculator</button></a>
+```
+
+
+### Experimenting with different widgets
+
+```python
+
+from django.db import models
+
+class StudentFeedback(models.Model):
+    GENDER_CHOICES = [
+        ('M', 'Male'),
+        ('F', 'Female'),
+        ('O', 'Other'),
+    ]
+
+    name = models.CharField(max_length=100)
+    email = models.EmailField()
+    age = models.IntegerField()
+    satisfaction = models.IntegerField()  # slider input
+    gender = models.CharField(max_length=1, choices=GENDER_CHOICES)
+    enrolled = models.BooleanField(default=False)  # checkbox
+    join_date = models.DateField()
+    course = models.CharField(max_length=100)
+    comments = models.TextField()
+
+    def __str__(self):
+        return self.name
+
+```
+
+```python
+
+from django import forms
+from .models import StudentFeedback
+
+class StudentFeedbackForm(forms.ModelForm):
+    class Meta:
+        model = StudentFeedback
+        fields = [
+            'name', 'email', 'age', 'satisfaction', 'gender',
+            'enrolled', 'join_date', 'course', 'comments'
+        ]
+        widgets = {
+            'name': forms.TextInput(attrs={'placeholder': 'Enter your full name'}),
+            'email': forms.EmailInput(attrs={'placeholder': 'Enter your email'}),
+            'age': forms.NumberInput(attrs={'min': 10, 'max': 100}),
+            'satisfaction': forms.NumberInput(attrs={'type': 'range', 'min': 1, 'max': 10}),
+            'gender': forms.RadioSelect(),
+            'enrolled': forms.CheckboxInput(),
+            'join_date': forms.DateInput(attrs={'type': 'date'}),
+            'course': forms.TextInput(attrs={'placeholder': 'Your course name'}),
+            'comments': forms.Textarea(attrs={'rows': 4, 'placeholder': 'Any feedback…'}),
+        }
+
+```
+
+```python
+
+from django.shortcuts import render
+from .forms import StudentFeedbackForm
+
+def feedback_view(request):
+    if request.method == "POST":
+        form = StudentFeedbackForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return render(request, "feedback_success.html", {"data": form.cleaned_data})
+    else:
+        form = StudentFeedbackForm()
+
+    return render(request, "feedback_form.html", {"form": form})
+
+```
+
+```html
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Feedback Form</title>
+</head>
+<body>
+
+<h2>Student Feedback Form</h2>
+
+<form method="POST">
+    {% csrf_token %}
+    <table>
+        {{ form.as_table }}
+    </table>
+
+    <button type="submit">Submit Feedback</button>
+</form>
+
+</body>
+</html>
+
+
+```
+
+```html
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Feedback Submitted</title>
+</head>
+<body>
+
+<h2>Thank you! Your feedback has been saved.</h2>
+
+<h3>Submitted Data:</h3>
+<ul>
+    <li><strong>Name:</strong> {{ data.name }}</li>
+    <li><strong>Email:</strong> {{ data.email }}</li>
+    <li><strong>Age:</strong> {{ data.age }}</li>
+    <li><strong>Satisfaction:</strong> {{ data.satisfaction }}</li>
+    <li><strong>Gender:</strong> {{ data.gender }}</li>
+    <li><strong>Enrolled:</strong> {{ data.enrolled }}</li>
+    <li><strong>Join Date:</strong> {{ data.join_date }}</li>
+    <li><strong>Course:</strong> {{ data.course }}</li>
+    <li><strong>Comments:</strong> {{ data.comments }}</li>
+</ul>
+
+<a href="{% url 'feedback_form' %}">
+    <button>Submit Another Response</button>
+</a>
+
+</body>
+</html>
+
+```
+
+```python
+
+from django.urls import path
+from .views import feedback_view
+
+urlpatterns = [
+    path('feedback/', feedback_view, name='feedback_form'),
+]
+
+```
+
+```python
+
+from django.contrib import admin
+from .models import StudentFeedback
+
+admin.site.register(StudentFeedback)
+
+```
