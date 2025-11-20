@@ -1,5 +1,5 @@
 from django import forms
-from .models import Student
+from .models import Student, StudentFeedback
 
 
 
@@ -19,3 +19,22 @@ ModelForm -> automatically creates a form from a model
 Meta -> metadata -> inner class that is used to configure the form
      -> which models to use and while fields to include
 '''
+
+class StudentFeedbackForm(forms.ModelForm):
+    class Meta:
+        model = StudentFeedback
+        fields = [
+            'name', 'email', 'age', 'satisfaction', 'gender',
+            'enrolled', 'join_date', 'course', 'comments'
+        ]
+        widgets = {
+            'name': forms.TextInput(attrs={'placeholder': 'Enter your full name'}),
+            'email': forms.EmailInput(attrs={'placeholder': 'Enter your email'}),
+            'age': forms.NumberInput(attrs={'min': 10, 'max': 100}),
+            'satisfaction': forms.NumberInput(attrs={'type': 'range', 'min': 1, 'max': 10}),
+            'gender': forms.RadioSelect(),
+            'enrolled': forms.CheckboxInput(),
+            'join_date': forms.DateInput(attrs={'type': 'date'}),
+            'course': forms.TextInput(attrs={'placeholder': 'Your course name'}),
+            'comments': forms.Textarea(attrs={'rows': 4, 'placeholder': 'Any feedback…'}),
+        }

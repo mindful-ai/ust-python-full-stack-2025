@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Feedback Submitted</title>
+</head>
+<body>
+
+<h2>Thank you! Your feedback has been saved.</h2>
+
+<h3>Submitted Data:</h3>
+<ul>
+    <li><strong>Name:</strong> {{ data.name }}</li>
+    <li><strong>Email:</strong> {{ data.email }}</li>
+    <li><strong>Age:</strong> {{ data.age }}</li>
+    <li><strong>Satisfaction:</strong> {{ data.satisfaction }}</li>
+    <li><strong>Gender:</strong> {{ data.gender }}</li>
+    <li><strong>Enrolled:</strong> {{ data.enrolled }}</li>
+    <li><strong>Join Date:</strong> {{ data.join_date }}</li>
+    <li><strong>Course:</strong> {{ data.course }}</li>
+    <li><strong>Comments:</strong> {{ data.comments }}</li>
+</ul>
+
+<a href="{% url 'feedback_view' %}">
+    <button>Submit Another Response</button>
+</a>
+
+</body>
+</html>

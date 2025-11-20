@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Submitted</title>
+</head>
+<body>
+
+<h2>Message Sent Successfully!</h2>
+
+<p><strong>Subject:</strong> {{ subject }}</p>
+<p><strong>Message:</strong> {{ message }}</p>
+<p><strong>Your Email:</strong> {{ email }}</p>
+
+<a href="{% url 'contact_admin' %}"><button>Send Another Message</button></a>
+<a href="{% url 'add_student' %}"><button>Add Student</button></a>
+
+</body>
+</html>

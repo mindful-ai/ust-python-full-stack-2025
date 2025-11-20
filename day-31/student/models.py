@@ -15,3 +15,23 @@ class Student(models.Model):
 
     def __str__(self):
         return self.full_name
+
+class StudentFeedback(models.Model):
+    GENDER_CHOICES = [
+        ('M', 'Male'),
+        ('F', 'Female'),
+        ('O', 'Other'),
+    ]
+
+    name = models.CharField(max_length=100)
+    email = models.EmailField()
+    age = models.IntegerField()
+    satisfaction = models.IntegerField()  # slider input
+    gender = models.CharField(max_length=1, choices=GENDER_CHOICES)
+    enrolled = models.BooleanField(default=False)  # checkbox
+    join_date = models.DateField()
+    course = models.CharField(max_length=100)
+    comments = models.TextField()
+
+    def __str__(self):
+        return self.name
