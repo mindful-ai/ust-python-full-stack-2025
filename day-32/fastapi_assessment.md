@@ -10,13 +10,15 @@ The API must support full **CRUD operations**.
 
 ## Student Object Structure
 
-  Field    Type    Description
-  -------- ------- ----------------------------------------------
-  id       int     Auto-increment or unique ID
-  name     str     Student's full name
-  age      int     Age of the student
-  course   str     Course enrolled (e.g., Python, Data Science)
-  score    float   Test score (0--100)
+| Field | Type  | Description                                   |
+|-------|--------|-----------------------------------------------|
+| id    | int    | Auto-increment or unique ID                   |
+| name  | str    | Student's full name                           |
+| age   | int    | Age of the student                            |
+| course| str    | Course enrolled (e.g., Python, Data Science)  |
+| score | float  | Test score (0–100)                            |
+
+
 
 ------------------------------------------------------------------------
 
@@ -49,6 +51,10 @@ The API must support full **CRUD operations**.
 
 -   **DELETE /students/{student_id}**
 -   Deletes the student
+
+### 6. Test the application using requests module
+
+-    Generate test cases using AI tools
 
 ------------------------------------------------------------------------
 
