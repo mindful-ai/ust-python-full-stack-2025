@@ -1,0 +1,27 @@
+version: '3'
+networks:
+  avengers:
+    driver: bridge
+services:
+  redisnode01:
+    image: redis
+    networks:
+      - avengers
+    ports:
+      - "6379:6379"
+  nodejsserver01:
+    depends_on:
+      - "redisnode01"
+    image: my-nodejs
+    networks:
+      - avengers
+    ports: 
+      - "8081:8081"
+  haproxyserver:
+    depends_on:
+      - "nodejsserver01"
+    image: my-haproxy
+    networks:
+      - avengers
+    ports: 
+      - "99:80"
