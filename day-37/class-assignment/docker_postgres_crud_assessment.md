@@ -15,7 +15,7 @@ Your task is to:
     -   Delete a record
 4.  Verify each operation by printing results to the console.
 5.  Submit:
-    -   Docker command or `docker-compose.yml`
+    -   Docker compose file: `docker-compose.yml`
     -   Python CRUD script
     -   Screenshots of CRUD output
 
