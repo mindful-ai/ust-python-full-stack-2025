@@ -3,8 +3,8 @@
 
 # **AWS RDS (Relational Database Service) – Workshop Manual**
 
-```markdown
-# AWS RDS (Relational Database Service) – Workshop Manual
+
+
 
 ---
 
@@ -15,7 +15,7 @@ AWS manages backups, patching, scaling, and high availability.
 
 ---
 
-## 2. Key Features & Use Cases
+## 2. Key Features & Use Casesc
 
 ### Features
 - Automated backups & snapshots.  
@@ -53,10 +53,12 @@ Launch a free-tier MySQL RDS instance and connect via MySQL client.
 1. Launch an EC2 instance (as in previous manual).  
 2. Install MySQL client:  
    ```bash
-   sudo yum install mysql -y
+   sudo dnf install mariadb105 -y
+   ```
 3. Connect to RDS
     ```bash
     mysql -h <RDS-endpoint> -u <username> -p
+    ```
 4. Create a table
     ```sql
     CREATE DATABASE demo;
@@ -64,6 +66,7 @@ Launch a free-tier MySQL RDS instance and connect via MySQL client.
     CREATE TABLE users (id INT PRIMARY KEY, name VARCHAR(50));
     INSERT INTO users VALUES (1, 'Alice'), (2, 'Bob');
     SELECT * FROM users;
+    ```
 
 
 ### Best Practices
