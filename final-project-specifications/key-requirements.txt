@@ -1,0 +1,39 @@
+1. Use of AI tools
+2. Project tracking using Excel or Trello
+3. Version control with Git and GitHub
+4. Code documentation inside python files
+5. Code comments for clarity
+6. Documentation using Markdown files - Generate using AI tools
+7. Testing frameworks such as pytest or unittest
+8. The use of Git and GitHub for version control and collaboration
+9. Fast/Rapid prototyping with Copilot or similar AI tools
+10. Code reviews and pair programming sessions 
+
+----------------------------------------------------------------------
+
+11. Models deloyed on FastAPI or Flask
+12. Containerization using Docker
+13. Cloud deployment on AWS  
+
+----------------------------------------------------------------------
+
+You should be above to highlight the key requirements for the final project.
+You should demonstrate/explain the workflow and tools used in your final project.
+
+----------------------------------------------------------------------
+
+Recommended Steps:
+
+1. Create the financial tools module and test it locally.
+2. Document the code and create a README.md file using AI tools.
+3. Set up a GitHub repository and push the code.
+4. Create a django project as per the specifications
+5. Integrate the financial tools module into the Django project.
+6. Build the loan estimator Models
+7. Add additional features as per the specifications as above
+8. Test the entire application
+BONUS STEPS:
+9. Containerize the application using Docker
+10. Deploy the application on AWS
+
+
